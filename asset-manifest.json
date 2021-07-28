@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Paul4701/devsnest_tha.git/static/css/main.a2a1085e.chunk.css",
+    "main.js": "/Paul4701/devsnest_tha.git/static/js/main.1a78a6a7.chunk.js",
+    "main.js.map": "/Paul4701/devsnest_tha.git/static/js/main.1a78a6a7.chunk.js.map",
+    "runtime-main.js": "/Paul4701/devsnest_tha.git/static/js/runtime-main.9ba49c14.js",
+    "runtime-main.js.map": "/Paul4701/devsnest_tha.git/static/js/runtime-main.9ba49c14.js.map",
+    "static/js/2.a2121dbe.chunk.js": "/Paul4701/devsnest_tha.git/static/js/2.a2121dbe.chunk.js",
+    "static/js/2.a2121dbe.chunk.js.map": "/Paul4701/devsnest_tha.git/static/js/2.a2121dbe.chunk.js.map",
+    "index.html": "/Paul4701/devsnest_tha.git/index.html",
+    "static/css/main.a2a1085e.chunk.css.map": "/Paul4701/devsnest_tha.git/static/css/main.a2a1085e.chunk.css.map",
+    "static/js/2.a2121dbe.chunk.js.LICENSE.txt": "/Paul4701/devsnest_tha.git/static/js/2.a2121dbe.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ba49c14.js",
+    "static/js/2.a2121dbe.chunk.js",
+    "static/css/main.a2a1085e.chunk.css",
+    "static/js/main.1a78a6a7.chunk.js"
+  ]
+}
