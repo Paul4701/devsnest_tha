@@ -50,7 +50,7 @@ return (<div className="meme">
             <button onClick={()=>setMeme(null)}>choose Template</button>
       <a href={meme.url} target="_blank"><button  >download</button> </a>      
         </div>
-        <div>CREATED BY PINTU</div>
+        <div>CREATED BY PINTU :)</div>
     
 </div>)
 }
