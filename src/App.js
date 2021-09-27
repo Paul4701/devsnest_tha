@@ -1,26 +1,70 @@
-import { template } from "@babel/core";
-import React,{useState,useEffect} from "react";
-import './App.css'
-import Template from "./template";
-import Meme from "./meme";
+import "./App.css";
+import Card from "./Card.js";
+import React, { useState, useEffect } from "react";
+import { useArray } from "./useArray";
+
+function Form({ addFood, clearList }) {
+  const [title, setTitle] = useState("");
+  const [calorie, setCalorie] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addFood({ title, calorie });
+  };
+
+  return (
+    <form className="Form" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Item name"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        required
+      />
+
+      <input
+        type="number"
+        placeholder="Calorie amount"
+        value={calorie}
+        onChange={(e) => setCalorie(e.target.value)}
+        required
+      />
+
+      <button name="add" type="submit" className="btn btn-primary">
+        Add Item
+      </button>
+      <button
+        name="clear"
+        type="button"
+        onClick={clearList}
+        className="btn btn-danger"
+      >
+        Clear list
+      </button>
+    </form>
+  );
+}
 
 function App() {
-
-  const[templates,setTemplates]=useState([]);
-  const[meme,setMeme]=useState(null);
-
- useEffect(()=>{
-   fetch('https://api.imgflip.com/get_memes').then(res=>res.json()).then((data)=>setTemplates(data.data.memes))
- },[]
- )
+  const foods = useArray([]);
   return (
-<>
-<div className="App">
-  <h4>MEME GENERATOR</h4>
-   {meme===null ? <Template templates={templates} setMeme={setMeme}/> :<Meme meme={meme} setMeme={setMeme}/> }
-</div>
-</>
+    <div>
+      <Form addFood={foods.add} clearList={foods.clear} />
+      {foods.length === 0 ? (
+        <h2>Start Adding items</h2>
+      ) : (
+        foods.value.map((food, index) => (
+          <Card
+            key={index}
+            food={food}
+            index={index}
+            updateFood={foods.updateAtIndex}
+            deleteFood={foods.removeByIndex}
+          />
+        ))
+      )}
+    </div>
   );
 }
 
 export default App;
+// export default App;
